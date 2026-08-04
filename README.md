@@ -65,6 +65,7 @@ Skill 的描述也覆盖常见实现任务，可被 Codex 隐式选用。它不�
 │   ├── references/readme-contract.md
 │   └── scripts/inspect_readme_context.py
 ├── .scatter/scatter.json
+├── LICENSE
 └── README.md
 ```
 
@@ -76,6 +77,10 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 .agents/skills/maintain-bilingual-readme/scripts/inspect_readme_context.py "$PWD"
 ```
+
+### 许可证
+
+本项目采用 [MIT 许可证](LICENSE)，版权所有 © 2026 Niall-Young。
 
 [English](#english) · [返回顶部](#双语-readme-守门员--bilingual-readme-guardian)
 
@@ -138,6 +143,7 @@ The default structure is trimmed to the project and never retains empty sections
 │   ├── references/readme-contract.md
 │   └── scripts/inspect_readme_context.py
 ├── .scatter/scatter.json
+├── LICENSE
 └── README.md
 ```
 
@@ -149,5 +155,9 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 .agents/skills/maintain-bilingual-readme/scripts/inspect_readme_context.py "$PWD"
 ```
+
+### License
+
+This project is licensed under the [MIT License](LICENSE). Copyright © 2026 Niall-Young.
 
 [中文](#中文) · [Back to top](#双语-readme-守门员--bilingual-readme-guardian)
