@@ -37,7 +37,7 @@ def run_git(project: Path, *args: str) -> tuple[int, str]:
         stderr=subprocess.DEVNULL,
         text=True,
     )
-    return completed.returncode, completed.stdout.strip()
+    return completed.returncode, completed.stdout.rstrip()
 
 
 def parse_status_z(raw: str) -> list[dict[str, str]]:
