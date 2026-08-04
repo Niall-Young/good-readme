@@ -1,8 +1,8 @@
 # Good README
 
-一个面向 Codex 当前打开项目的可复用 Skill：在每轮项目变更完成后判断 README 是否受影响，并在需要时创建或同步维护中英文内容。
+一个面向 Codex 当前打开项目的可复用 Skill：只要本轮产生任何非 README 项目文件变更，就强制判断 README 是否受影响，并在需要时创建或同步维护中英文内容。
 
-A reusable Skill for the project currently open in Codex: after each implementation turn, it decides whether the README is affected and creates or synchronizes its Chinese and English content when needed.
+A reusable Skill for the project currently open in Codex: whenever a turn changes any non-README project file, it must decide whether the README is affected and create or synchronize its Chinese and English content when needed.
 
 [中文](#中文) | [English](#english)
 
@@ -18,6 +18,8 @@ A reusable Skill for the project currently open in Codex: after each implementat
 ### 核心能力
 
 - 将 Codex 当前工作区视为项目边界，不把父级 Git 仓库误当成目标项目。
+- 任何非 README 项目文件发生创建、修改、重命名或删除时，都强制进入 README 判断门禁。
+- 仅当用户明确限定本轮只修改 README，并且实际没有改动其他项目文件时，才跳过门禁。
 - 在每轮实际变更后收集 diff、README、清单文件、配置和公共接口等证据。
 - 根据用户可见行为、安装运行方式、依赖配置、API、CLI、目录结构和限制是否变化，决定创建、更新或保留 README。
 - 使用同一份 `README.md` 和页内锚点提供中文 / English 切换。
@@ -34,7 +36,7 @@ cp -R SKILL.md agents references scripts \
   ~/.codex/skills/good-readme/
 ```
 
-安装完成后无需输入 `$good-readme`。`policy.allow_implicit_invocation` 已明确启用，Codex 会根据 Skill 描述在功能开发、修复、重构、配置和迁移等项目任务中隐式选择它。它不是独立运行的后台 Hook；门禁由 Codex 在 Skill 被选中后、一次实现任务结束前执行。
+安装完成后无需输入 `$good-readme`。`policy.allow_implicit_invocation` 已明确启用；Skill 描述要求 Codex 对所有预计会改动非 README 项目文件的实现任务选择它，包括代码、配置、资源、依赖、测试、构建、功能、修复、重构和迁移。只有用户明确要求本轮只改 README，且实际没有改动其他文件时才豁免。它不是独立运行的后台 Hook；门禁由 Codex 在 Skill 被选中后、一次实现任务结束前执行。
 
 ### 使用方法
 
@@ -97,6 +99,8 @@ This repository is the complete source project for the `good-readme` Skill. `SKI
 ### Features
 
 - Treat the current Codex workspace as the project boundary instead of accidentally targeting an ancestor Git repository.
+- Require the README decision gate whenever a non-README project file is created, modified, renamed, or deleted.
+- Skip the gate only when the user explicitly limits the turn to README changes and no other project file actually changes.
 - Gather evidence after each real change from the diff, README, manifests, configuration, and public interfaces.
 - Decide whether to create, update, or preserve the README based on changes to visible behavior, setup, dependencies, configuration, APIs, CLIs, structure, or limitations.
 - Provide a Chinese / English switch in one `README.md` using stable in-page anchors.
@@ -113,7 +117,7 @@ cp -R SKILL.md agents references scripts \
   ~/.codex/skills/good-readme/
 ```
 
-You do not need to type `$good-readme` after installation. `policy.allow_implicit_invocation` is explicitly enabled, allowing Codex to select the Skill from its description during feature, fix, refactor, configuration, and migration work. It is not an independent background hook; Codex applies the gate before completing an implementation task after the Skill has been selected.
+You do not need to type `$good-readme` after installation. `policy.allow_implicit_invocation` is explicitly enabled, and the Skill description requires Codex to select it for every implementation task expected to change a non-README project file, including code, configuration, assets, dependencies, tests, builds, features, fixes, refactors, and migrations. The only exemption is a user-explicit README-only change that actually touches no other file. It is not an independent background hook; Codex applies the gate before completing an implementation task after the Skill has been selected.
 
 ### Usage
 

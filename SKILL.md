@@ -1,11 +1,19 @@
 ---
 name: good-readme
-description: Maintain README.md as part of every implementation turn in Codex's currently opened project. Use after any code, configuration, asset, workflow, dependency, API, or behavior change to decide whether documentation is affected; create README.md when absent; keep it bilingual with a visible Chinese/English language switch; and verify README claims against repository evidence. Trigger for project-building, feature, fix, refactor, setup, migration, or documentation work even when the user does not explicitly mention README.
+description: Mandatory README.md gate for every Codex implementation task in the currently opened project that creates, modifies, renames, or deletes any non-README project file. Always trigger for code, configuration, asset, workflow, dependency, API, behavior, feature, fix, refactor, setup, migration, test, build, or documentation changes even when the user never mentions README; after the changes, decide whether README.md must be created or updated, keep it bilingual with a visible Chinese/English switch, and verify its claims against repository evidence. Skip only when the user explicitly says the requested file change is limited exclusively to README.md.
 ---
 
 # Good README
 
-Treat README accuracy as part of the definition of done for project changes. Make a deliberate evidence-based decision after each implementation turn; do not rewrite documentation mechanically.
+Treat README accuracy as part of the definition of done for project changes. For every qualifying task, run this Skill even when the final decision is to leave README unchanged. Do not rely on the user to mention documentation and do not rewrite documentation mechanically.
+
+## Apply the Mandatory Trigger Gate
+
+1. Apply this Skill whenever the turn creates, modifies, renames, or deletes at least one project file other than a project-root README variant.
+2. Treat an implementation request that is expected to produce such a change as qualifying from the start; do not wait for the user to request README work.
+3. Skip only when the user explicitly limits the requested file changes to `README.md` or another README variant and no non-README project file changes during the turn.
+4. If a non-README file changes unexpectedly during a README-only task, cancel the exemption and run the full end-of-turn gate.
+5. Do not skip because the code change appears small, internal, experimental, test-only, or unlikely to need documentation. Those facts may justify `README: unchanged` only after the gate runs.
 
 ## Protect Project Scope
 
@@ -17,7 +25,7 @@ Treat README accuracy as part of the definition of done for project changes. Mak
 
 ## Run the End-of-Turn Gate
 
-Run this gate after completing and verifying the requested project change, before the final response.
+Run this gate after completing and verifying the requested project change, before the final response. The gate is mandatory for every task admitted by the trigger rules above; only the decision to write README content is conditional.
 
 ### 1. Gather evidence
 

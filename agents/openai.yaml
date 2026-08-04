@@ -1,7 +1,7 @@
 interface:
   display_name: "Good README"
-  short_description: "在每轮项目变更后判断、创建并同步维护中英文双语 README 文档"
-  default_prompt: "Use $good-readme to assess this project change and keep its bilingual README accurate."
+  short_description: "非 README 项目文件一有变更，就强制检查并同步维护双语 README"
+  default_prompt: "Use $good-readme as the mandatory README gate for every non-README project file change."
 
 policy:
   allow_implicit_invocation: true
