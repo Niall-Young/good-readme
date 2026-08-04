@@ -13,7 +13,7 @@ A reusable Skill for the project currently open in Codex: after each implementat
 
 ### 项目简介
 
-本项目用于设计和梳理 `maintain-bilingual-readme` Skill。Skill 安装在 `~/.codex/skills/maintain-bilingual-readme`，可服务于以后在 Codex 左侧打开的不同项目。
+本项目用于设计和维护 `maintain-bilingual-readme` Skill。Skill 源码位于项目内的 `.agents/skills/maintain-bilingual-readme`，Codex 打开本项目时可以发现并使用它；复制该目录到其他项目的 `.agents/skills/` 后，也可以在对应项目中复用。
 
 ### 核心能力
 
@@ -55,13 +55,26 @@ Skill 的描述也覆盖常见实现任务，可被 Codex 隐式选用。它不�
 7. 开发与验证
 8. API / CLI、部署、排障、贡献和许可证（按需）
 
+### 项目结构
+
+```text
+.
+├── .agents/skills/maintain-bilingual-readme/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   ├── references/readme-contract.md
+│   └── scripts/inspect_readme_context.py
+├── .scatter/scatter.json
+└── README.md
+```
+
 ### 开发与验证
 
 ```sh
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
-  ~/.codex/skills/maintain-bilingual-readme
+  .agents/skills/maintain-bilingual-readme
 
-~/.codex/skills/maintain-bilingual-readme/scripts/inspect_readme_context.py "$PWD"
+.agents/skills/maintain-bilingual-readme/scripts/inspect_readme_context.py "$PWD"
 ```
 
 [English](#english) · [返回顶部](#双语-readme-守门员--bilingual-readme-guardian)
@@ -73,7 +86,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 ### Overview
 
-This project designs and maps the `maintain-bilingual-readme` Skill. The Skill is installed at `~/.codex/skills/maintain-bilingual-readme` and can serve different projects opened from the Codex sidebar.
+This project designs and maintains the `maintain-bilingual-readme` Skill. Its source lives inside the project at `.agents/skills/maintain-bilingual-readme`, where Codex can discover it when this project is open. Copying that directory into another project's `.agents/skills/` makes it reusable there as well.
 
 ### Features
 
@@ -115,13 +128,26 @@ The default structure is trimmed to the project and never retains empty sections
 7. Development and Verification
 8. API / CLI, deployment, troubleshooting, contributing, and license (when needed)
 
+### Project Structure
+
+```text
+.
+├── .agents/skills/maintain-bilingual-readme/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   ├── references/readme-contract.md
+│   └── scripts/inspect_readme_context.py
+├── .scatter/scatter.json
+└── README.md
+```
+
 ### Development and Verification
 
 ```sh
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
-  ~/.codex/skills/maintain-bilingual-readme
+  .agents/skills/maintain-bilingual-readme
 
-~/.codex/skills/maintain-bilingual-readme/scripts/inspect_readme_context.py "$PWD"
+.agents/skills/maintain-bilingual-readme/scripts/inspect_readme_context.py "$PWD"
 ```
 
 [中文](#中文) · [Back to top](#双语-readme-守门员--bilingual-readme-guardian)

@@ -1,14 +1,14 @@
 {
   "version": 1,
   "projectName": "good readme",
-  "updatedAt": "2026-08-04T11:56:29.099Z",
+  "updatedAt": "2026-08-04T12:03:09.095Z",
   "activePageId": "page-36c0609913",
   "pages": [
     {
       "id": "page-36c0609913",
       "name": "Page 1",
       "createdAt": "2026-08-04T11:50:00.957Z",
-      "updatedAt": "2026-08-04T11:56:29.099Z",
+      "updatedAt": "2026-08-04T12:03:09.095Z",
       "viewport": {
         "x": 0,
         "y": 0,
@@ -44,7 +44,7 @@
           },
           "data": {
             "title": "可复用 Skill 包",
-            "body": "安装位置：`~/.codex/skills/maintain-bilingual-readme`\n\n- `SKILL.md`：触发范围与端到端门禁\n- `scripts/inspect_readme_context.py`：只读收集项目证据\n- `references/readme-contract.md`：双语结构与模板契约\n- `agents/openai.yaml`：Codex 界面元数据",
+            "body": "项目内位置：`.agents/skills/maintain-bilingual-readme`\n\n- `SKILL.md`：触发范围与端到端门禁\n- `scripts/inspect_readme_context.py`：只读收集项目证据\n- `references/readme-contract.md`：双语结构与模板契约\n- `agents/openai.yaml`：Codex 界面元数据\n\n该目录随项目版本化；Codex 打开本项目时可以发现它，也可复制到其他项目的 `.agents/skills/` 复用。",
             "effort": "xhigh",
             "runMode": "flow",
             "attachments": []
@@ -309,7 +309,7 @@
       },
       "data": {
         "title": "可复用 Skill 包",
-        "body": "安装位置：`~/.codex/skills/maintain-bilingual-readme`\n\n- `SKILL.md`：触发范围与端到端门禁\n- `scripts/inspect_readme_context.py`：只读收集项目证据\n- `references/readme-contract.md`：双语结构与模板契约\n- `agents/openai.yaml`：Codex 界面元数据",
+        "body": "项目内位置：`.agents/skills/maintain-bilingual-readme`\n\n- `SKILL.md`：触发范围与端到端门禁\n- `scripts/inspect_readme_context.py`：只读收集项目证据\n- `references/readme-contract.md`：双语结构与模板契约\n- `agents/openai.yaml`：Codex 界面元数据\n\n该目录随项目版本化；Codex 打开本项目时可以发现它，也可复制到其他项目的 `.agents/skills/` 复用。",
         "effort": "xhigh",
         "runMode": "flow",
         "attachments": []
