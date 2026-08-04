@@ -34,13 +34,7 @@ cp -R SKILL.md agents references scripts \
   ~/.codex/skills/good-readme/
 ```
 
-在 Codex 中显式调用：
-
-```text
-$good-readme 检查本轮变更，并同步维护当前项目的双语 README。
-```
-
-Skill 的描述也覆盖常见实现任务，可被 Codex 隐式选用。它不是独立运行的后台 Hook；门禁由 Codex 在一次实现任务结束前执行。
+安装完成后无需输入 `$good-readme`。`policy.allow_implicit_invocation` 已明确启用，Codex 会根据 Skill 描述在功能开发、修复、重构、配置和迁移等项目任务中隐式选择它。它不是独立运行的后台 Hook；门禁由 Codex 在 Skill 被选中后、一次实现任务结束前执行。
 
 ### 使用方法
 
@@ -119,13 +113,7 @@ cp -R SKILL.md agents references scripts \
   ~/.codex/skills/good-readme/
 ```
 
-Invoke it explicitly in Codex:
-
-```text
-$good-readme assess this turn's changes and synchronize the current project's bilingual README.
-```
-
-Its description also covers common implementation tasks, so Codex may select it implicitly. It is not an independent background hook; Codex applies the gate before completing an implementation task.
+You do not need to type `$good-readme` after installation. `policy.allow_implicit_invocation` is explicitly enabled, allowing Codex to select the Skill from its description during feature, fix, refactor, configuration, and migration work. It is not an independent background hook; Codex applies the gate before completing an implementation task after the Skill has been selected.
 
 ### Usage
 
