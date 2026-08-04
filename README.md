@@ -13,7 +13,7 @@ A reusable Skill for the project currently open in Codex: after each implementat
 
 ### 项目简介
 
-本项目用于设计和维护 `maintain-bilingual-readme` Skill。Skill 源码位于项目内的 `.agents/skills/maintain-bilingual-readme`，Codex 打开本项目时可以发现并使用它；复制该目录到其他项目的 `.agents/skills/` 后，也可以在对应项目中复用。
+本仓库本身就是 `maintain-bilingual-readme` Skill 的完整源码项目。`SKILL.md`、界面元数据、参考契约和脚本都直接位于项目根目录；它不会仅因为在 Codex 中打开该仓库就被当作项目级 Skill 自动使用。
 
 ### 核心能力
 
@@ -25,6 +25,14 @@ A reusable Skill for the project currently open in Codex: after each implementat
 - 在交付前校验内容依据、语言对齐、链接、路径、命令和最终 diff。
 
 ### 快速开始
+
+使用前，将 Skill 本体安装到 Codex 的用户级 Skill 目录：
+
+```sh
+mkdir -p ~/.codex/skills/maintain-bilingual-readme
+cp -R SKILL.md agents references scripts \
+  ~/.codex/skills/maintain-bilingual-readme/
+```
 
 在 Codex 中显式调用：
 
@@ -59,23 +67,22 @@ Skill 的描述也覆盖常见实现任务，可被 Codex 隐式选用。它不�
 
 ```text
 .
-├── .agents/skills/maintain-bilingual-readme/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   ├── references/readme-contract.md
-│   └── scripts/inspect_readme_context.py
 ├── .scatter/scatter.json
 ├── LICENSE
-└── README.md
+├── README.md
+├── SKILL.md
+├── agents/openai.yaml
+├── references/readme-contract.md
+└── scripts/inspect_readme_context.py
 ```
 
 ### 开发与验证
 
 ```sh
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
-  .agents/skills/maintain-bilingual-readme
+  .
 
-.agents/skills/maintain-bilingual-readme/scripts/inspect_readme_context.py "$PWD"
+./scripts/inspect_readme_context.py "$PWD"
 ```
 
 ### 许可证
@@ -91,7 +98,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 ### Overview
 
-This project designs and maintains the `maintain-bilingual-readme` Skill. Its source lives inside the project at `.agents/skills/maintain-bilingual-readme`, where Codex can discover it when this project is open. Copying that directory into another project's `.agents/skills/` makes it reusable there as well.
+This repository is the complete source project for the `maintain-bilingual-readme` Skill. `SKILL.md`, interface metadata, the reference contract, and the script live directly at the project root. Opening this repository in Codex does not automatically treat it as a project-local Skill.
 
 ### Features
 
@@ -103,6 +110,14 @@ This project designs and maintains the `maintain-bilingual-readme` Skill. Its so
 - Verify evidence, language parity, links, paths, commands, and the final diff before handoff.
 
 ### Quick Start
+
+Before using it, install the Skill package in Codex's user-level Skill directory:
+
+```sh
+mkdir -p ~/.codex/skills/maintain-bilingual-readme
+cp -R SKILL.md agents references scripts \
+  ~/.codex/skills/maintain-bilingual-readme/
+```
 
 Invoke it explicitly in Codex:
 
@@ -137,23 +152,22 @@ The default structure is trimmed to the project and never retains empty sections
 
 ```text
 .
-├── .agents/skills/maintain-bilingual-readme/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   ├── references/readme-contract.md
-│   └── scripts/inspect_readme_context.py
 ├── .scatter/scatter.json
 ├── LICENSE
-└── README.md
+├── README.md
+├── SKILL.md
+├── agents/openai.yaml
+├── references/readme-contract.md
+└── scripts/inspect_readme_context.py
 ```
 
 ### Development and Verification
 
 ```sh
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
-  .agents/skills/maintain-bilingual-readme
+  .
 
-.agents/skills/maintain-bilingual-readme/scripts/inspect_readme_context.py "$PWD"
+./scripts/inspect_readme_context.py "$PWD"
 ```
 
 ### License
