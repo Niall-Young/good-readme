@@ -1,4 +1,4 @@
-# 双语 README 守门员 / Bilingual README Guardian
+# Good README
 
 一个面向 Codex 当前打开项目的可复用 Skill：在每轮项目变更完成后判断 README 是否受影响，并在需要时创建或同步维护中英文内容。
 
@@ -13,7 +13,7 @@ A reusable Skill for the project currently open in Codex: after each implementat
 
 ### 项目简介
 
-本仓库本身就是 `maintain-bilingual-readme` Skill 的完整源码项目。`SKILL.md`、界面元数据、参考契约和脚本都直接位于项目根目录；它不会仅因为在 Codex 中打开该仓库就被当作项目级 Skill 自动使用。
+本仓库本身就是 `good-readme` Skill 的完整源码项目。`SKILL.md`、界面元数据、参考契约和脚本都直接位于项目根目录；它不会仅因为在 Codex 中打开该仓库就被当作项目级 Skill 自动使用。
 
 ### 核心能力
 
@@ -29,15 +29,15 @@ A reusable Skill for the project currently open in Codex: after each implementat
 使用前，将 Skill 本体安装到 Codex 的用户级 Skill 目录：
 
 ```sh
-mkdir -p ~/.codex/skills/maintain-bilingual-readme
+mkdir -p ~/.codex/skills/good-readme
 cp -R SKILL.md agents references scripts \
-  ~/.codex/skills/maintain-bilingual-readme/
+  ~/.codex/skills/good-readme/
 ```
 
 在 Codex 中显式调用：
 
 ```text
-$maintain-bilingual-readme 检查本轮变更，并同步维护当前项目的双语 README。
+$good-readme 检查本轮变更，并同步维护当前项目的双语 README。
 ```
 
 Skill 的描述也覆盖常见实现任务，可被 Codex 隐式选用。它不是独立运行的后台 Hook；门禁由 Codex 在一次实现任务结束前执行。
@@ -89,7 +89,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 本项目采用 [MIT 许可证](LICENSE)，版权所有 © 2026 Niall-Young。
 
-[English](#english) · [返回顶部](#双语-readme-守门员--bilingual-readme-guardian)
+[English](#english) · [返回顶部](#good-readme)
 
 ---
 
@@ -98,7 +98,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 ### Overview
 
-This repository is the complete source project for the `maintain-bilingual-readme` Skill. `SKILL.md`, interface metadata, the reference contract, and the script live directly at the project root. Opening this repository in Codex does not automatically treat it as a project-local Skill.
+This repository is the complete source project for the `good-readme` Skill. `SKILL.md`, interface metadata, the reference contract, and the script live directly at the project root. Opening this repository in Codex does not automatically treat it as a project-local Skill.
 
 ### Features
 
@@ -114,15 +114,15 @@ This repository is the complete source project for the `maintain-bilingual-readm
 Before using it, install the Skill package in Codex's user-level Skill directory:
 
 ```sh
-mkdir -p ~/.codex/skills/maintain-bilingual-readme
+mkdir -p ~/.codex/skills/good-readme
 cp -R SKILL.md agents references scripts \
-  ~/.codex/skills/maintain-bilingual-readme/
+  ~/.codex/skills/good-readme/
 ```
 
 Invoke it explicitly in Codex:
 
 ```text
-$maintain-bilingual-readme assess this turn's changes and synchronize the current project's bilingual README.
+$good-readme assess this turn's changes and synchronize the current project's bilingual README.
 ```
 
 Its description also covers common implementation tasks, so Codex may select it implicitly. It is not an independent background hook; Codex applies the gate before completing an implementation task.
@@ -174,4 +174,4 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
 
 This project is licensed under the [MIT License](LICENSE). Copyright © 2026 Niall-Young.
 
-[中文](#中文) · [Back to top](#双语-readme-守门员--bilingual-readme-guardian)
+[中文](#中文) · [Back to top](#good-readme)

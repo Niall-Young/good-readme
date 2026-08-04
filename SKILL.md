@@ -1,9 +1,9 @@
 ---
-name: maintain-bilingual-readme
+name: good-readme
 description: Maintain README.md as part of every implementation turn in Codex's currently opened project. Use after any code, configuration, asset, workflow, dependency, API, or behavior change to decide whether documentation is affected; create README.md when absent; keep it bilingual with a visible Chinese/English language switch; and verify README claims against repository evidence. Trigger for project-building, feature, fix, refactor, setup, migration, or documentation work even when the user does not explicitly mention README.
 ---
 
-# Maintain Bilingual README
+# Good README
 
 Treat README accuracy as part of the definition of done for project changes. Make a deliberate evidence-based decision after each implementation turn; do not rewrite documentation mechanically.
 
