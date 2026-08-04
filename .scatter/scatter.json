@@ -1,0 +1,540 @@
+{
+  "version": 1,
+  "projectName": "good readme",
+  "updatedAt": "2026-08-04T11:56:29.099Z",
+  "activePageId": "page-36c0609913",
+  "pages": [
+    {
+      "id": "page-36c0609913",
+      "name": "Page 1",
+      "createdAt": "2026-08-04T11:50:00.957Z",
+      "updatedAt": "2026-08-04T11:56:29.099Z",
+      "viewport": {
+        "x": 0,
+        "y": 0,
+        "zoom": 1
+      },
+      "nodes": [
+        {
+          "id": "readme-skill-purpose",
+          "type": "task",
+          "position": {
+            "x": 0,
+            "y": 570
+          },
+          "data": {
+            "title": "Skill 目标与项目边界",
+            "body": "服务 Codex 左侧当前打开的项目，而不是聊天本身。\n\n- 每轮实际项目变更完成后执行 README 门禁\n- 项目根 = 当前工作区或用户明确指定路径\n- 不把父级 Git 根误当成目标项目\n- 缺失则创建，受影响则同步，无影响则说明理由\n- 这是 Codex 的结束前工作流，不是独立后台 Hook",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 271
+          }
+        },
+        {
+          "id": "readme-skill-package",
+          "type": "task",
+          "position": {
+            "x": 680,
+            "y": 570
+          },
+          "data": {
+            "title": "可复用 Skill 包",
+            "body": "安装位置：`~/.codex/skills/maintain-bilingual-readme`\n\n- `SKILL.md`：触发范围与端到端门禁\n- `scripts/inspect_readme_context.py`：只读收集项目证据\n- `references/readme-contract.md`：双语结构与模板契约\n- `agents/openai.yaml`：Codex 界面元数据",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 313
+          }
+        },
+        {
+          "id": "readme-evidence",
+          "type": "task",
+          "position": {
+            "x": 1360,
+            "y": 570
+          },
+          "data": {
+            "title": "收集最终项目证据",
+            "body": "在实现与验证完成后检查最终状态：\n\n- 本轮 staged / unstaged / untracked 变更\n- 现有 README 与其事实陈述\n- manifest、环境样例、配置、入口和公共接口\n- 实际可用的安装、运行、测试与部署命令\n\n脚本只负责收集；是否影响文档仍由 Codex 判断。",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 275
+          }
+        },
+        {
+          "id": "readme-impact-gate",
+          "type": "task",
+          "position": {
+            "x": 2040,
+            "y": 570
+          },
+          "data": {
+            "title": "README 影响判断",
+            "body": "以下任一变化进入写入路径：\n\n- 项目目的、受众、能力或用户可见行为\n- 安装、运行、构建、测试、部署或排障\n- 依赖、服务、环境变量、配置、权限或安全\n- API、CLI、路由、数据格式、集成或兼容性\n- 有意义的目录结构或现有 README 已失真\n\n纯内部重构、格式化、既有行为测试通常不更新。",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 299
+          }
+        },
+        {
+          "id": "readme-write-action",
+          "type": "task",
+          "position": {
+            "x": 2720,
+            "y": 380
+          },
+          "data": {
+            "title": "选择创建或精准更新",
+            "body": "进入写入路径后只做与证据相称的动作：\n\n- 项目根没有 `README.md` → 创建完整双语 README\n- 已有 README 且事实受影响 → 只改相关段落及对应译文\n- 保留准确的用户原创内容\n- 不添加虚构命令、空章节、无依据徽章或营销话术",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 269
+          }
+        },
+        {
+          "id": "readme-unchanged",
+          "type": "task",
+          "position": {
+            "x": 2720,
+            "y": 1140
+          },
+          "data": {
+            "title": "README 保持不变",
+            "body": "当最终变更不影响用户、贡献者或运维者需要知道的事实时，不制造文档噪音。\n\n交付时明确输出：`README: unchanged`，并附一条基于证据的简短理由。",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 227
+          }
+        },
+        {
+          "id": "readme-bilingual-contract",
+          "type": "task",
+          "position": {
+            "x": 3400,
+            "y": 380
+          },
+          "data": {
+            "title": "单文件双语契约",
+            "body": "把中文和 English 视为同一份语义文档：\n\n- 统一保存在项目根 `README.md`\n- 两种语言拥有相同章节顺序与事实范围\n- 命令、链接、版本、警告、限制和功能状态必须一致\n- 表达可以自然本地化，不要求生硬逐字翻译",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 247
+          }
+        },
+        {
+          "id": "readme-language-navigation",
+          "type": "task",
+          "position": {
+            "x": 4080,
+            "y": 0
+          },
+          "data": {
+            "title": "中英文切换方式",
+            "body": "在标题附近放置稳定页内导航：\n\n`[中文](#中文) | [English](#english)`\n\n对应章节使用显式锚点：\n\n- `<a id=\"中文\"></a>` + `## 中文`\n- `<a id=\"english\"></a>` + `## English`\n\n长文档可在各语言末尾加入返回顶部与切换链接。",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 283
+          }
+        },
+        {
+          "id": "readme-section-structure",
+          "type": "task",
+          "position": {
+            "x": 4080,
+            "y": 380
+          },
+          "data": {
+            "title": "README 内容结构",
+            "body": "核心章节（有证据时必须覆盖）：\n\n1. 项目简介 / Overview\n2. 核心能力 / Features\n3. 快速开始 / Quick Start\n4. 使用方法 / Usage\n5. 开发与验证 / Development and Verification\n\n按项目需要加入：配置、项目结构、API / CLI、架构、部署、排障、安全、贡献、路线图、许可证。无内容就整节删除。",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 343
+          }
+        },
+        {
+          "id": "readme-verification",
+          "type": "task",
+          "position": {
+            "x": 4080,
+            "y": 760
+          },
+          "data": {
+            "title": "验证与交付结果",
+            "body": "交付前完成：\n\n- README 陈述与最终仓库状态一致\n- 中英文标题和事实逐项对齐\n- 锚点、相对链接、路径、命令和代码围栏有效\n- 运行项目已有的 Markdown / 链接检查（若适用）\n- 最终 diff 没有无关重写\n\n最终只报告一种结果：`created`、`updated` 或 `unchanged`。",
+            "effort": "xhigh",
+            "runMode": "flow",
+            "attachments": []
+          },
+          "selected": false,
+          "measured": {
+            "width": 400,
+            "height": 321
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "edge-purpose-package",
+          "source": "readme-skill-purpose",
+          "target": "readme-skill-package",
+          "label": "封装为"
+        },
+        {
+          "id": "edge-package-evidence",
+          "source": "readme-skill-package",
+          "target": "readme-evidence",
+          "label": "执行门禁"
+        },
+        {
+          "id": "edge-evidence-impact",
+          "source": "readme-evidence",
+          "target": "readme-impact-gate",
+          "label": "提供证据"
+        },
+        {
+          "id": "edge-impact-write",
+          "source": "readme-impact-gate",
+          "target": "readme-write-action",
+          "label": "缺失或受影响"
+        },
+        {
+          "id": "edge-impact-unchanged",
+          "source": "readme-impact-gate",
+          "target": "readme-unchanged",
+          "label": "无文档影响"
+        },
+        {
+          "id": "edge-write-contract",
+          "source": "readme-write-action",
+          "target": "readme-bilingual-contract",
+          "label": "遵守"
+        },
+        {
+          "id": "edge-contract-navigation",
+          "source": "readme-bilingual-contract",
+          "target": "readme-language-navigation",
+          "label": "导航规范"
+        },
+        {
+          "id": "edge-contract-structure",
+          "source": "readme-bilingual-contract",
+          "target": "readme-section-structure",
+          "label": "内容规范"
+        },
+        {
+          "id": "edge-contract-verification",
+          "source": "readme-bilingual-contract",
+          "target": "readme-verification",
+          "label": "验收规范"
+        }
+      ]
+    }
+  ],
+  "viewport": {
+    "x": 0,
+    "y": 0,
+    "zoom": 1
+  },
+  "nodes": [
+    {
+      "id": "readme-skill-purpose",
+      "type": "task",
+      "position": {
+        "x": 0,
+        "y": 570
+      },
+      "data": {
+        "title": "Skill 目标与项目边界",
+        "body": "服务 Codex 左侧当前打开的项目，而不是聊天本身。\n\n- 每轮实际项目变更完成后执行 README 门禁\n- 项目根 = 当前工作区或用户明确指定路径\n- 不把父级 Git 根误当成目标项目\n- 缺失则创建，受影响则同步，无影响则说明理由\n- 这是 Codex 的结束前工作流，不是独立后台 Hook",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 271
+      }
+    },
+    {
+      "id": "readme-skill-package",
+      "type": "task",
+      "position": {
+        "x": 680,
+        "y": 570
+      },
+      "data": {
+        "title": "可复用 Skill 包",
+        "body": "安装位置：`~/.codex/skills/maintain-bilingual-readme`\n\n- `SKILL.md`：触发范围与端到端门禁\n- `scripts/inspect_readme_context.py`：只读收集项目证据\n- `references/readme-contract.md`：双语结构与模板契约\n- `agents/openai.yaml`：Codex 界面元数据",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 313
+      }
+    },
+    {
+      "id": "readme-evidence",
+      "type": "task",
+      "position": {
+        "x": 1360,
+        "y": 570
+      },
+      "data": {
+        "title": "收集最终项目证据",
+        "body": "在实现与验证完成后检查最终状态：\n\n- 本轮 staged / unstaged / untracked 变更\n- 现有 README 与其事实陈述\n- manifest、环境样例、配置、入口和公共接口\n- 实际可用的安装、运行、测试与部署命令\n\n脚本只负责收集；是否影响文档仍由 Codex 判断。",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 275
+      }
+    },
+    {
+      "id": "readme-impact-gate",
+      "type": "task",
+      "position": {
+        "x": 2040,
+        "y": 570
+      },
+      "data": {
+        "title": "README 影响判断",
+        "body": "以下任一变化进入写入路径：\n\n- 项目目的、受众、能力或用户可见行为\n- 安装、运行、构建、测试、部署或排障\n- 依赖、服务、环境变量、配置、权限或安全\n- API、CLI、路由、数据格式、集成或兼容性\n- 有意义的目录结构或现有 README 已失真\n\n纯内部重构、格式化、既有行为测试通常不更新。",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 299
+      }
+    },
+    {
+      "id": "readme-write-action",
+      "type": "task",
+      "position": {
+        "x": 2720,
+        "y": 380
+      },
+      "data": {
+        "title": "选择创建或精准更新",
+        "body": "进入写入路径后只做与证据相称的动作：\n\n- 项目根没有 `README.md` → 创建完整双语 README\n- 已有 README 且事实受影响 → 只改相关段落及对应译文\n- 保留准确的用户原创内容\n- 不添加虚构命令、空章节、无依据徽章或营销话术",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 269
+      }
+    },
+    {
+      "id": "readme-unchanged",
+      "type": "task",
+      "position": {
+        "x": 2720,
+        "y": 1140
+      },
+      "data": {
+        "title": "README 保持不变",
+        "body": "当最终变更不影响用户、贡献者或运维者需要知道的事实时，不制造文档噪音。\n\n交付时明确输出：`README: unchanged`，并附一条基于证据的简短理由。",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 227
+      }
+    },
+    {
+      "id": "readme-bilingual-contract",
+      "type": "task",
+      "position": {
+        "x": 3400,
+        "y": 380
+      },
+      "data": {
+        "title": "单文件双语契约",
+        "body": "把中文和 English 视为同一份语义文档：\n\n- 统一保存在项目根 `README.md`\n- 两种语言拥有相同章节顺序与事实范围\n- 命令、链接、版本、警告、限制和功能状态必须一致\n- 表达可以自然本地化，不要求生硬逐字翻译",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 247
+      }
+    },
+    {
+      "id": "readme-language-navigation",
+      "type": "task",
+      "position": {
+        "x": 4080,
+        "y": 0
+      },
+      "data": {
+        "title": "中英文切换方式",
+        "body": "在标题附近放置稳定页内导航：\n\n`[中文](#中文) | [English](#english)`\n\n对应章节使用显式锚点：\n\n- `<a id=\"中文\"></a>` + `## 中文`\n- `<a id=\"english\"></a>` + `## English`\n\n长文档可在各语言末尾加入返回顶部与切换链接。",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 283
+      }
+    },
+    {
+      "id": "readme-section-structure",
+      "type": "task",
+      "position": {
+        "x": 4080,
+        "y": 380
+      },
+      "data": {
+        "title": "README 内容结构",
+        "body": "核心章节（有证据时必须覆盖）：\n\n1. 项目简介 / Overview\n2. 核心能力 / Features\n3. 快速开始 / Quick Start\n4. 使用方法 / Usage\n5. 开发与验证 / Development and Verification\n\n按项目需要加入：配置、项目结构、API / CLI、架构、部署、排障、安全、贡献、路线图、许可证。无内容就整节删除。",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 343
+      }
+    },
+    {
+      "id": "readme-verification",
+      "type": "task",
+      "position": {
+        "x": 4080,
+        "y": 760
+      },
+      "data": {
+        "title": "验证与交付结果",
+        "body": "交付前完成：\n\n- README 陈述与最终仓库状态一致\n- 中英文标题和事实逐项对齐\n- 锚点、相对链接、路径、命令和代码围栏有效\n- 运行项目已有的 Markdown / 链接检查（若适用）\n- 最终 diff 没有无关重写\n\n最终只报告一种结果：`created`、`updated` 或 `unchanged`。",
+        "effort": "xhigh",
+        "runMode": "flow",
+        "attachments": []
+      },
+      "selected": false,
+      "measured": {
+        "width": 400,
+        "height": 321
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-purpose-package",
+      "source": "readme-skill-purpose",
+      "target": "readme-skill-package",
+      "label": "封装为"
+    },
+    {
+      "id": "edge-package-evidence",
+      "source": "readme-skill-package",
+      "target": "readme-evidence",
+      "label": "执行门禁"
+    },
+    {
+      "id": "edge-evidence-impact",
+      "source": "readme-evidence",
+      "target": "readme-impact-gate",
+      "label": "提供证据"
+    },
+    {
+      "id": "edge-impact-write",
+      "source": "readme-impact-gate",
+      "target": "readme-write-action",
+      "label": "缺失或受影响"
+    },
+    {
+      "id": "edge-impact-unchanged",
+      "source": "readme-impact-gate",
+      "target": "readme-unchanged",
+      "label": "无文档影响"
+    },
+    {
+      "id": "edge-write-contract",
+      "source": "readme-write-action",
+      "target": "readme-bilingual-contract",
+      "label": "遵守"
+    },
+    {
+      "id": "edge-contract-navigation",
+      "source": "readme-bilingual-contract",
+      "target": "readme-language-navigation",
+      "label": "导航规范"
+    },
+    {
+      "id": "edge-contract-structure",
+      "source": "readme-bilingual-contract",
+      "target": "readme-section-structure",
+      "label": "内容规范"
+    },
+    {
+      "id": "edge-contract-verification",
+      "source": "readme-bilingual-contract",
+      "target": "readme-verification",
+      "label": "验收规范"
+    }
+  ]
+}
