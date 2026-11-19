@@ -1,6 +1,6 @@
 ---
 name: good-readme
-description: Mandatory README.md gate for every Codex implementation task in the currently opened project that creates, modifies, renames, or deletes any non-README project file. Always trigger for code, configuration, asset, workflow, dependency, API, behavior, feature, fix, refactor, setup, migration, test, build, or documentation changes even when the user never mentions README; after the changes, decide whether README.md must be created or updated, keep it bilingual with a visible Chinese/English switch, and verify its claims against repository evidence. Skip only when the user explicitly says the requested file change is limited exclusively to README.md.
+description: "MUST invoke on EVERY task that creates, edits, renames, or deletes any non-README project file (code, config, scripts, docs, tests, build, or assets)—even if the user never mentions README. Before finishing, inspect repository evidence to create/update a bilingual (ZH/EN) README.md or report unchanged. Skip only when the user explicitly limits changes to README.md."
 ---
 
 # Good README
@@ -17,7 +17,7 @@ Treat README accuracy as part of the definition of done for project changes. For
 
 ## Protect Project Scope
 
-1. Treat the Codex workspace/current working directory or the user's explicit project path as the project root.
+1. Treat the active workspace/current working directory or the user's explicit project path as the project root.
 2. Resolve it to an absolute path before reading or writing.
 3. Do not substitute an ancestor Git root for the opened project. This matters when the project sits inside a home-directory Git repository or monorepo.
 4. Keep all README writes inside that project root unless the user explicitly identifies another target.
@@ -102,4 +102,4 @@ State exactly one outcome in the final response:
 - `README: updated` — summarize the concrete facts synchronized in both languages;
 - `README: unchanged` — give the evidence-based reason.
 
-Do not imply that the Skill can run as a background hook. It is an end-of-turn workflow applied by Codex whenever this Skill is triggered.
+Do not imply that the Skill can run as a background hook. It is an end-of-turn workflow applied by the agent whenever this Skill is triggered.

@@ -1,8 +1,8 @@
 # Good README
 
-一个面向 Codex 当前打开项目的可复用 Skill：只要本轮产生任何非 README 项目文件变更，就强制判断 README 是否受影响，并在需要时创建或同步维护中英文内容。
+一个面向 Codex、Claude Code、Antigravity 等 Agent Skills 宿主当前打开项目的可复用 Skill：只要本轮产生任何非 README 项目文件变更，就强制判断 README 是否受影响，并在需要时创建或同步维护中英文内容。
 
-A reusable Skill for the project currently open in Codex: whenever a turn changes any non-README project file, it must decide whether the README is affected and create or synchronize its Chinese and English content when needed.
+A reusable Skill for the project currently open in Codex, Claude Code, Antigravity, or another Agent Skills host: whenever a turn changes any non-README project file, it must decide whether the README is affected and create or synchronize its Chinese and English content when needed.
 
 [中文](#中文) | [English](#english)
 
@@ -17,7 +17,7 @@ A reusable Skill for the project currently open in Codex: whenever a turn change
 
 ### 核心能力
 
-- 将 Codex 当前工作区视为项目边界，不把父级 Git 仓库误当成目标项目。
+- 将当前打开的工作区视为项目边界，不把父级 Git 仓库误当成目标项目。
 - 任何非 README 项目文件发生创建、修改、重命名或删除时，都强制进入 README 判断门禁。
 - 仅当用户明确限定本轮只修改 README，并且实际没有改动其他项目文件时，才跳过门禁。
 - 在每轮实际变更后收集 diff、README、清单文件、配置和公共接口等证据。
@@ -98,7 +98,7 @@ This repository is the complete source project for the `good-readme` Skill. `SKI
 
 ### Features
 
-- Treat the current Codex workspace as the project boundary instead of accidentally targeting an ancestor Git repository.
+- Treat the currently open workspace as the project boundary instead of accidentally targeting an ancestor Git repository.
 - Require the README decision gate whenever a non-README project file is created, modified, renamed, or deleted.
 - Skip the gate only when the user explicitly limits the turn to README changes and no other project file actually changes.
 - Gather evidence after each real change from the diff, README, manifests, configuration, and public interfaces.
